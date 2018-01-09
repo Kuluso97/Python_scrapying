@@ -22,7 +22,7 @@ class Imdb:
 
 def main():
 	r = requests.get(URL, 'html.parser')
-	soup = BeautifulSoup(r.content, 'html.parser')
+	soup = BeautifulSoup(r.content, 'lxml')
 	imdb = Imdb(soup)
 	print(imdb.getNameList())
 
